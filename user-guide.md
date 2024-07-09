@@ -2,7 +2,8 @@
 
 ![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/charte/logo.png)   
 ![slogan](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/charte/slogan.png)
-</div>
+</div>  
+
 # Présentation de l'Infrastructure Informatique
 
 ## Introduction
