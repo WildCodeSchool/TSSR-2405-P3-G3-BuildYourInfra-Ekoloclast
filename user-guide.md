@@ -2,10 +2,11 @@
 
 ![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/charte/logo.png)   
 ![slogan](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/charte/slogan.png)
-</div>
+</div>  
+
 # Présentation de l'Infrastructure Informatique
 
-## Introduction
+# Introduction
 
 Cette documentation présente l'infrastructure informatique pour notre entreprise.Nous allons séparer le reseau informatique en 10 départements distincts. Chaque département disposera de son propre réseau, et l'ensemble de l'infrastructure inclura un serveur Active Directory (AD) avec des services DHCP et DNS, ainsi qu'une solution de réplication pour assurer la redondance et la continuité de service. Dans l'optique d'une évolution de notre société, le matériel est prévue pour acceuillir de nouveaux collaborateur et de nouveaux services.
 
@@ -31,8 +32,19 @@ Cette documentation présente l'infrastructure informatique pour notre entrepris
 ![image8](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/organigramme/organigramme-9.png)
 </div>
 
-## Structure de l'Infrastructure
-Pour établir un réseau pour la société comprenant aujourd'hui 183 personnes réparties dans 10 départements, nous allons sélectionner le matériel Cisco approprié pour couvrir les besoins en commutation, routage, sécurité et connectivité sans fil.  
+## Nomenclature
+Pour une utilisation plus simple une nomenclature clair sera appliquer :  
+- Chaque employer aura un login sous la forme **p.nomxxx** la premier lettre du prénoms . le nom complet et 3 chiffres aléatoires afin d'éviter les doublons .
+ - Chaque poste sera renommer pour avoir un nom sous la forme **nom du groupe.xxx** xxx étant un numéro identifiant .
+
+ Un fichier excel sera réasiler en même temps afin de faire le suivi des changements.
+## Arborescence active directory  
+Dans Active Directory nous alons créer une unité d'organisation (OU) par département, afin de pouvoir gérer les departements indépendament.  
+Dans chaque OU de département, sera crée un utilisateur de ce département.   
+
+# Structure de l'Infrastructure
+Pour établir un réseau pour la société comprenant aujourd'hui 183 personnes réparties dans 10 départements, nous allons sélectionner le matériel Cisco approprié pour couvrir les besoins en commutation, routage, sécurité et connectivité sans fil.   
+Les poste utilisateur seront mis à jour vers windows 10 et les postes trop ancien devrons être remplacés.   
  Voici une liste du matériel Cisco recommandé :
 
 ### 1. Routeurs
@@ -212,7 +224,7 @@ Nous avons attribué des sous-réseaux /24 à chaque département, offrant une g
 Ce plan d'adressage IP en /16 assure que chaque département dispose d'une plage d'adresses IP suffisante pour ses besoins actuels et futurs, tout en laissant de la place pour des équipements réseau et des extensions futures importantes.
 
 ## Table de routage 
-Afin de permettre la communication entre les services, un tableau de routage est appliqué au routeurs.  
+Afin de permettre la communication entre les services, une table de routage est appliqué aux routeurs.  
 
 ## Configuration des Services
 
@@ -235,10 +247,13 @@ Les serveurs AD seront configurés pour une réplication multi-maître, assurant
 ### Réplication des Données
 Une solution de réplication des données, telle que DFS-R (Distributed File System Replication), sera utilisée pour synchroniser les fichiers et les données critiques entre les différents serveurs de l'organisation.
 
-## Conclusion
+## Solution de stockage en ligne 
+
+
+# Conclusion
 
 Cette infrastructure informatique est conçue pour offrir une gestion efficace des ressources et des services au sein de chaque département, tout en assurant une haute disponibilité et une continuité de service grâce à une solution de réplication robuste.
 
-![image](C:\Users\dupre\Desktop\TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast\images\organigramme-1.png)
+
 
 
