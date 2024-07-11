@@ -34,13 +34,16 @@ Cette documentation présente l'infrastructure informatique pour notre entrepris
 
 ## Nomenclature
 Pour une utilisation plus simple une nomenclature clair sera appliquer :  
-- Chaque employer aura un login sous la forme **p.nomxxx** la premier lettre du prénoms . le nom complet et 3 chiffres aléatoires afin d'éviter les doublons .
- - Chaque poste sera renommer pour avoir un nom sous la forme **nom du groupe.xxx** xxx étant un numéro identifiant .
+ - Chaque employer aura un login sous la forme **p.nomxxx** la premier lettre du prénoms . le nom complet et 3 chiffres aléatoires afin d'éviter les doublons .
+ - L'adress mail sera sous forme **prénom.nom@ekoloclast.fr**
+ - Chaque poste sera renommer pour avoir un nom sous la forme **département.xxx** xxx étant un numéro identifiant .
 
  Un fichier excel sera réasiler en même temps afin de faire le suivi des changements.
 ## Arborescence active directory  
-Dans Active Directory nous alons créer une unité d'organisation (OU) par département, afin de pouvoir gérer les departements indépendament.  
-Dans chaque OU de département, sera crée un utilisateur de ce département.   
+Dans Active Directory nous alons créer une unité d'organisation (OU) par département, afin de pouvoir gérer les departements indépendament.   
+
+Dans chaque OU de département, sera crée un utilisateur de ce département. 
+Des groupe par service de département seront aussi crée afin de gérer les droit d'accés au dossier.  
 
 # Structure de l'Infrastructure
 Pour établir un réseau pour la société comprenant aujourd'hui 183 personnes réparties dans 10 départements, nous allons sélectionner le matériel Cisco approprié pour couvrir les besoins en commutation, routage, sécurité et connectivité sans fil.   
@@ -235,7 +238,7 @@ Chaque département disposera de son propre serveur AD pour gérer les utilisate
 Les serveurs DHCP seront configurés pour attribuer des adresses IP dynamiques aux machines de chaque département, en s'assurant qu'aucun conflit d'adresse IP ne survienne entre les différents réseaux.
 
 ### DNS
-Les serveurs DNS assureront la résolution des noms de domaine internes, facilitant la communication entre les différents départements et assurant une navigation réseau efficace.
+Les serveurs DNS assureront la résolution des noms de domaine internes `ekoloclast.lan`, facilitant la communication entre les différents départements et assurant une navigation réseau efficace.
 
 ## Solution de Réplication
 
@@ -247,8 +250,16 @@ Les serveurs AD seront configurés pour une réplication multi-maître, assurant
 ### Réplication des Données
 Une solution de réplication des données, telle que DFS-R (Distributed File System Replication), sera utilisée pour synchroniser les fichiers et les données critiques entre les différents serveurs de l'organisation.
 
-## Solution de stockage en ligne 
+## Sécurité
+Chaque utilisateur aura à définir son mot de passe personel leur de sa premiere connexion. 
 
+Ce mot de passe devra comporter au minimun **15 caractéres** dont au minimun 1 majuscule, 1 chiffre et 1 caractére spécial.
+Le mot de passe d'origine sera :`Azerty1*`   
+
+Pour la gestion des droits d'accés sur les différents dossier partager un fichier exel (matrice des droit) est réaliser afin de pouvoir convenir avec les différents responsable, les droits à appliquer sur les dossiers.
+
+## Solution de stockage en ligne 
+Un solution de stockage centralisé sur un nas en local, afin de permettre à tous les utilisateur de retrouver leur dossier, peut importe le poste de connexion  et une solution sur un stockage amovible hors ligne est envisagé.   Une solution de stockage en cloud est à l'étude .
 
 # Conclusion
 
