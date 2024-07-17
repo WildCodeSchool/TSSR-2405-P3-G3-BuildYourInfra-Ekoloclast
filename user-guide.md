@@ -11,15 +11,15 @@
 Comme d'écrit dans le document **user_guide** de la semaine derniere, des changements dans le mode de connexion au poste utilisateurs sont effectuées.  
 
 En effet dorénavent pour vous identifier à votre comptre utilisateur vous allez devoir saisir un `Identifiant` et un `mot de passe` que vous avez reçu par mail sur votre adresse professionel.
-<div align="center">
-![ecran]()
-</div>
+
+![ecran](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s02/ressources/image%20poste/changemdp.png?raw=true)
+
 Votre identifiant est sous la forme `P.nomxxx` premire lettre de votre prénom.votre nom et un nombre `xxx` à 3 chiffres pour éviter les doublons.
 
 Lors de votre premiére connexion, voys allez devoir choisir votre mot de passe **personnel**, il devra comporter 15 caractére  avec 1 chiffre,1 majuscule et 1 caractére spécial .
-<div align="center"> 
-![changemdp]()
-</div>
+
+![changemdp](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s02/ressources/image%20poste/connexion.png)
+![newmdp](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s02/ressources/image%20poste/newmdp.png)
 ## **2. FAQ : Solutions aux problèmes connus et communs liés à l'utilisation**
 
 ```
