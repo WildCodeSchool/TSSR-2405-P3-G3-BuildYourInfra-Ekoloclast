@@ -2,7 +2,17 @@
 
 ## Pour ajouter une GPO sur les ordinateurs  du controleur de domaine 
 
-Cliquez sur l'onglet "outils" dans le gestionnaire de sreveur
+Cliquez sur l'onglet "outils" dans le gestionnaire de serveur
 Ensuite cliquez sur gestion des strategies de groupe
-puis clique droit sur Objets de strategie de groupe  -> nouveau
+puis clic droit sur Objets de strategie de groupe  -> nouveau
 Donnez un nom a la strategie de groupe que vous voulez creer 
+
+![Capture d'écran 2024-07-22 204426](https://github.com/user-attachments/assets/3afbd962-3074-4fd9-b183-fed5302d8179)
+
+je l'ai nommé  "bloquage cle USB"
+
+clic droit sur la gpo  "modifier"
+
+
+
+
