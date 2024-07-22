@@ -1,1 +1,8 @@
 #Procedure pour ajouter des GPO a une infrastructure 
+
+## Pour ajouter une GPO sur les ordinateurs  du controleur de domaine 
+
+Cliquez sur l'onglet "outils" dans le gestionnaire de sreveur
+Ensuite cliquez sur gestion des strategies de groupe
+puis clique droit sur Objets de strategie de groupe  -> nouveau
+Donnez un nom a la strategie de groupe que vous voulez creer 
