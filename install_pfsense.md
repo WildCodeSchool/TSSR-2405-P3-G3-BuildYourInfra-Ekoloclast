@@ -1,3 +1,8 @@
+<div align="center"> 
+
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/charte/logo.png)   
+![slogan](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/main/ressources/charte/slogan.png)
+</div>    
 
 
 # Installation de pfSense
@@ -42,7 +47,7 @@ Configurez l'interface WAN, LAN, et DMZ selon vos besoins.
 ## Assigner les Interfaces
 La Premiere configuration ce passe sur l'interface de Pfsense .
 On commence par assigner les interfaces réseaux
-![ecran]()   
+![ecran](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s02/ressources/pfsense/ecran.png)   
 On choisie l'option `1) Assign Interfaceset` et  on assigne la bonne interface à la WAN, celle de la LAN et pour fini du DMZ.  
 
  
