@@ -67,7 +67,7 @@ WAN (em1)
 LAN (em0)
 
 - Sélectionnez lan pour configurer l'interface LAN.
-- Entrez l'adresse IP : 192.168.1.50.
+- Entrez l'adresse IP : 192.168.0.1
 - Entrez le masque de sous-réseau en CIDR (pour /16, c'est 16).
 - Lorsque demandé pour l'adresse IPv6, appuyez sur Entrée pour ignorer.
 - Vous n'avez généralement pas besoin de passerelle pour l'interface LAN.
@@ -85,7 +85,7 @@ Après avoir configuré les adresses IP, la console vous demandera si vous voule
 Vous pouvez redémarrer pfSense pour appliquer toutes les configurations en sélectionnant `5) Reboot system` dans le menu principal.  
 Pour vérifier la configuration, vous pouvez utiliser l'option `8) Shell` pour accéder à la ligne de commande et utiliser des commandes comme ifconfig pour afficher les paramètres des interfaces réseau.
 
-Si les configuration sont bonne, allez sur un pc client (dans le même reseaux que le Pfsense), ouvrez le navigateur et connecter vous au Pfsense aec l'adresse de la LAn `192.168.1.50`  
+Si les configuration sont bonne, allez sur un pc client (dans le même reseaux que le Pfsense), ouvrez le navigateur et connecter vous au Pfsense aec l'adresse de la LAn `192.168.0.1`  
 Le login par defaut est `admin` et le mot de passe est `pfsense`.  
 
 
