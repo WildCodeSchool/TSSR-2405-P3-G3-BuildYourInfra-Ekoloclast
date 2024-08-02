@@ -1,3 +1,10 @@
+<div align="center"> 
+
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/charte/new%20ekoloclast%20titre%20sans%20fond.png)   
+
+</div>    
+
+
 # Tuto : Réalisation d'un RAID 5 avec 4 Disques pour la Sauvegarde des Données
 
 ## Introduction
@@ -24,17 +31,17 @@ Le RAID (Redundant Array of Independent Disks) 5 est une configuration qui utili
 
 1. **Accédez à la Gestion des Disques :**
    - Ouvrez le gestionnaire de disque en appuyant sur `Win + X` et en sélectionnant **Gestion des disques**.
-![gestion]()
+![gestion](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/gestion.png)
 
 2. **Initialiser les Disques :**
    - Si les disques ne sont pas encore initialisés, un message s'affichera pour vous demander de les initialiser. Sélectionnez les disques et choisissez le style de partition (GPT est recommandé).
-![ini]()
+![ini](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/init.png)
 3. **Créer le Volume RAID 5 :**
    - Faites un clic droit sur l'un des disques non alloués et sélectionnez **Nouveau Volume RAID-5**.
-   ![raid5]()
+   ![raid5](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/raid5.png)
    - Suivez l'assistant pour configurer le volume RAID 5 :
      - Sélectionnez les disques à inclure dans le RAID 5 (les quatre disques).
-     ![selection]()
+     ![selection](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/selection.png)
      - Attribuez une lettre de lecteur.
      - Formatez le volume avec le système de fichiers NTFS.
      - Complétez l'assistant pour créer le volume RAID 5.
@@ -46,7 +53,7 @@ Le RAID (Redundant Array of Independent Disks) 5 est une configuration qui utili
 
 1. **Vérification des Disques :**
    - Allumez le serveur taper la commande `lsblk` afin d'afficher la liste des disques  
-   ![disk]()
+   ![disk](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/disk.png)
 
 2. **Installation des Outils RAID :**
    - Assurez-vous que `mdadm` est installé :
@@ -145,14 +152,14 @@ On choisi le Raid **(FD)** on tape **quit** pour sortir et on fait la même opé
      ```sh
      sudo mdadm --create --verbose /dev/md0 --level=5 --raid-devices=4 /dev/sd[abcd]
      ```
-![creation raid]()
+![creation raid](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/creation%20raid.png)
 
 4. **Vérification de la Configuration :**
    - Vérifiez que le RAID est en cours de création :
      ```sh
      cat /proc/mdstat
      ```
-![verif]()
+![verif](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/verif.png)
 
 5. **Sauvegarder la Configuration :**
    - Sauvegardez la configuration du RAID pour qu'elle soit restaurée au démarrage :
@@ -169,7 +176,7 @@ On choisi le Raid **(FD)** on tape **quit** pour sortir et on fait la même opé
      ```sh
      sudo mkfs.ext4 /dev/md0
      ```
-![formatage]()
+![formatage](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/formatage.png)
 
 2. **Monter le Volume RAID (Linux) :**
    - Créez un point de montage et montez le volume RAID :
@@ -185,11 +192,11 @@ On choisi le Raid **(FD)** on tape **quit** pour sortir et on fait la même opé
      ```
 
 ### 4. Vérification et Maintenance
-
+![lsblk](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/lsblk.png)
 1. **Vérifier l'Intégrité du RAID (Linux) :**
    - Vérifiez régulièrement l'état du RAID avec :
      ```sh
-     ![alt text](image.png)
+     
      ```
 
 2. **Surveiller les Journaux Système (Linux) :**
