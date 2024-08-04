@@ -1,3 +1,9 @@
+<div align="center"> 
+
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/charte/new%20ekoloclast%20titre%20sans%20fond.png)   
+
+</div>
+
 # Mise en place d'un disque miroir sur disque systeme
 
 ## Introduction 
@@ -78,17 +84,17 @@ Ouvrez l'outil Gestion des disques en cliquant droit sur le menu Démarrer et en
 Initialiser le Nouveau Disque (si nécessaire) :
 Si le nouveau disque n'est pas initialisé, un message s'affichera pour vous demander de l'initialiser.
 Sélectionnez le disque et choisissez le style de partition (GPT est recommandé).  
-![initserv]()  
+![initserv](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/init.png)  
 
 ### 2. Conversion des Disques en Disques Dynamiques  
 Convertir les Disques en Disques Dynamiques :
-![raidsystem3]()  
+![raidsystem3](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/raidsysteme3.png.crdownload)  
 Dans Gestion des disques, faites un clic droit sur le disque principal (celui contenant le volume existant) et sélectionnez Convertir en disque dynamique.  
 Répétez l'opération pour le nouveau disque que vous souhaitez ajouter comme miroir.  
 
 ### 3. Création du Volume Miroir
 Ajouter le Miroir :  
-![raidsysteme6]()  
+![raidsysteme6](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/raidsysteme6.png)  
 Faites un clic droit sur le volume existant que vous souhaitez mirrorer et sélectionnez Ajouter un miroir.
 Dans la fenêtre qui s'ouvre, sélectionnez le disque que vous avez préparé comme miroir et cliquez sur Ajouter un miroir.  
 
@@ -98,9 +104,9 @@ Vérifier le Volume Miroir :
 Une fois l'ajout terminé, le volume sera marqué comme en cours de resynchronisation dans Gestion des disques.
 Attendez que la resynchronisation soit terminée avant d'utiliser le volume miroir.  
 Surveiller l'état du Miroir :
-![raissysteme8]()  
+![raissysteme8](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/raidsysteme8.png)  
 Utilisez Gestion des disques pour surveiller l'état du volume miroir. Vous pouvez voir l'état de la resynchronisation et toute erreur éventuelle.  
-![miroirok]()  
+![miroirok](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/raid5/miroirok.png)  
 Une fois la synchronisation terminée le disque miroir est opérationnel.  
 
 ### 5. Remplacer un Disque Défectueux :
