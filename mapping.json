@@ -1,0 +1,44 @@
+{
+    "services": [
+        {
+            "prefix": "Fin[0-9]{3}",
+            "name": "Direction Financiere"
+        },
+        {
+            "prefix": "Ven[0-9]{3}",
+            "name": "Ventes et Developpement Commercial"
+        },
+        {
+            "prefix": "Com[0-9]{3}",
+            "name": "Communication"
+        },
+        {
+            "prefix": "RH[0-9]{3}",
+            "name": "RH"
+        },
+        {
+            "prefix": "Dsi[0-9]{3}",
+            "name": "DSI"
+        },
+        {
+            "prefix": "Jur[0-9]{3}",
+            "name": "Service Juridique"
+        },
+        {
+            "prefix": "Dg[0-9]{3}",
+            "name": "Direction Generale"
+        },
+        {
+            "prefix": "Mar[0-9]{3}",
+            "name": "Direction Marketing"
+        },
+        {
+            "prefix": "RD[0-9]{3}",
+            "name": "R&D"
+        },
+        {
+            "prefix": "Gen[0-9]{3}",
+            "name": "Service Generaux"
+        }
+    ]
+}
