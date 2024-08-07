@@ -1,3 +1,8 @@
+<div align="center"> 
+
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/charte/ekoloclasttitreok.png)   
+
+</div> 
 # Placement automatique des poste client
 ## Prérequi
 - Script powreshell 
