@@ -1,0 +1,7 @@
+#Mise a jour  de l'Active Directory par l'intermediaire d'un fichier .CSV 
+
+##Nouveau fichier .CSV avec des nouveaux employés ,des modifications d'utilisateurs et des changements de noms de departements
+
+Pour commencer je dois charger mon module active directory de mon serveur pour interagir avec lui a l'execution du script 
+
+
