@@ -16,3 +16,8 @@ La configuration final restera manuel afin de pouvoir faire le choix de l'utilis
 
 **Une information sur l'adresse de connection sera fourni en fin de scrit .**
 
+## Configuration Mariadb
+- create database glpidb character set utf8 collate utf8_bin;
+- grant all privileges on glpidb.* to glpi@localhost identified by 'motDePasse';
+- flush privileges;
+- quit
