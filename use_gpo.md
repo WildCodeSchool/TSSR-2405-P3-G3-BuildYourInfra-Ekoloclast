@@ -7,21 +7,18 @@
 
 # Documentation des GPO dans notre Active Directory
 
-## Table des Matières
-
-1. [Introduction](#introduction)
-2. [Liste des GPO](#liste-des-gpo)
-3. [Détails des GPO](#détails-des-gpo)
-4. [Application des GPO](#application-des-gpo)
-5. [Conclusion](#conclusion)
-
-
 ## Introduction
 
 Ce document vise à fournir une vue d'ensemble des Group Policy Objects (GPO) créés et configurés dans notre Active Directory (AD). Il détaille les paramètres, les objectifs et les unités d'organisation (OU) auxquelles chaque GPO est appliqué.
+## Table des Matières
 
 
-## Liste des GPO
+1. [Liste des GPO](#liste-des-gpo)
+2. [Détails des GPO](#détails-des-gpo)
+3. [Application des GPO](#vérification-de-lapplication)
+4. [Conclusion](#conclusion)
+
+## Liste des Groupes de GPO
 
 Voici la liste des GPO créés dans notre AD :
 
@@ -31,20 +28,19 @@ Voici la liste des GPO créés dans notre AD :
 4. [Politique de Mise à Jour](#politique-de-mise-à-jour)
 5. [Configuration des Applications](#configuration-des-applications)
 
-## Détails des GPO
 
-### Politique de Sécurité
+## Politique de Sécurité
 Ces GPO appliques des paramètres de sécurité pour renforcer la sécurité des ordinateurs et des utilisateurs.
-## liste des GPO 
+### liste des GPO 
 
 1. [Mot de passe](#mot-de-passe) 
 2. [Privilèges](#privilèges)
 3. [Blocage registre](#blocage-registre)
 4. [Blocage usb](#blocage-usb)
 5. [Blocage panneaux conf](#blocage-panneaux-conf)
-
+6. [bureau à distance](#bureau-à-distance)
+7. [Powershelle](#powershell)
 ## Mot de passe
-
 - **Paramètres**:
   - Mot de passe complexe
   - Verrouillage automatique de l'écran après 15 minutes d'inactivité
@@ -56,36 +52,73 @@ Ces GPO appliques des paramètres de sécurité pour renforcer la sécurité des
  - **Paramètres** :
     - Interdit l'élévation des privilège à partir d'un utilisateur non administrateur
 - **OU Appliquée**: Tous les ordinateurs et utilisateurs
-- **Chemin** :`Config ordi -> Param Windows -> Param de sécu -> strat locales -> Cont de compte utilisateur`   
+- **Chemin** :`Config ordi -> Param Windows -> Param de sécu -> strat locales -> Contr de compte utilisateur`   
+
 ### Blocage registre
 - **Paramètres**:
   - Blocage de l'accées au registre
 - **OU Appliquée**: Tous les utilisateurs  
 - **Chemin** : `Config utilisateur -> stratégies -> modèles d'admin -> Système`  
+
  ### Blocage usb
 - **Paramètres**:
   - Désactivation des port USB non essentiels
 - **OU Appliquée**: Tous les ordinateurs  
 - **Chemin** : `Config ordi -> Param Windows -> Param de sécu -> Modèles Administration`  
+
 ### Blocage panneaux conf
 - **Paramètres** :
     - Désactive l'accés au panneaux de configuration pour les utilisateurs non administrateur
-- **OU Appliquée**: Tous les utilisateurs
+- **OU Appliquée**: Tous les ordinateurs
 - **Chemin** :`Config utilisateur -> Stratégies -> Modéle d'administration -> panneus de conf -> Système`  
 
+### Bureau à distance
+- **Paramètres**:
+  - Active le le bureau à distance pour les déppanages  
+- **OU Appliquée**: Tous les utilisateurs  
+- **Chemin**:`Config utilisateur -> Stratégies -> Modéle d'administration -> Composant windows`
 
-
-
-
+### Powershell
+- **Paramètres**:
+  - Verrouille l'accé à powershell pour les utilisateurs non autorisés 
+- **OU Appliquée**: Tous les utilisateurs  
+- **Chemin**:`Config utilisateur -> Stratégies -> Modéle d'administration -> Composant windows`
 
 ## Configuration du Bureau
 
-- **Description**: Cette GPO configure les paramètres du bureau pour standardiser l'environnement de travail.
+Cees GPO configure les paramètres du bureau pour standardiser l'environnement de travail.  
+1.[fond Ecran](#fond-ecran)  
+2.[Ecran de veille](#ecran-veille)  
+3.[mappage](#mappage)
+4.[centre intérés](#centre-intérés)
+## Fond Ecran
 - **Paramètres**:
   - Fond d'écran de l'entreprise
-  - Icônes de bureau standardisées
   - Désactivation des modifications de l'arrière-plan
-- **OU Appliquée**: Tous les utilisateurs
+- **OU Appliquée**: Tous les ordinateurs  
+- **Chemin**:`Config utilisateur -> Stratégies -> Modèles Administration -> Bureau` 
+
+## Ecran veille
+- **Paramètres**:
+  - Définit l'écran de veille
+  - Demande un mot de passe pour sortir de l'écran de veille
+- **OU Appliquée**: Tous les ordinateurs  
+- **Chemin**:`Config utilisateur -> Stratégies -> Modèles Administration -> Bureau` 
+
+## Mappage
+- **Paramètres**:
+  - Définit le lecteur mappé pour le département pu le service
+  - Supprime le mappage si l'utilisateur n'as pas les droits
+- **OU Appliquée**: Tous les utilisateurs  
+- **Chemin**:`Config utilisateur -> Préférence -> Param windows -> Mappage lecteurs` 
+
+## Centre intérés
+- **Paramètres**:
+  - Désactive le centre d'intérés de windows
+  - **OU Appliquée**: Tous les utilisateurs  
+- **Chemin**:`Config ordinateurs -> Stratégies -> Modél admin -> Composant windows `
+
+
 
 ## Paramètres de Réseau
 
@@ -110,17 +143,28 @@ Ces GPO gère les mises à jour des systèmes d'exploitation et des logiciels.
 
 
 ### Configuration des Applications
+Ces GPO configure les paramètres des applications installées sur les ordinateurs.  
 
-- **Description**: Cette GPO configure les paramètres des applications installées sur les ordinateurs.
+1.[Installation Glpi-agent](#installation-glpi-agent)  
+2.[Firefox](#firefox)
+
+### Installation Glpi-agent
 - **Paramètres**:
   - Installation automatique des applications nécessaires
   - Désinstallation des applications non autorisées
   - Configuration des paramètres des applications
-- **OU Appliquée**: Tous les utilisateurs
+- **OU Appliquée**: Tous les ordinateurs
+- **Chemin** : `Config ordinateur -> stratégies -> Paramétres du logiciel -> Application attribuées` 
+
+### firefox
+- **Paramètres**:
+  - Installe le navigateur firefox 
+  - **OU Appliquée**: Tous les ordinateurs  
+- **Chemin** : `Config ordinateur -> stratégies -> Paramétres du logiciel -> Application attribuées` 
 
 ## Application des GPO
 
-### Méthode d'Application
+## Méthode d'Application
 
 Les GPO sont appliquées aux unités d'organisation (OU) spécifiques dans l'Active Directory. Chaque GPO est liée à une ou plusieurs OU pour s'assurer que les paramètres sont appliqués aux utilisateurs et aux ordinateurs appropriés.
 
@@ -136,4 +180,3 @@ Pour vérifier l'application des GPO, vous pouvez utiliser les outils suivants :
 Ce document fournit une vue d'ensemble des GPO créés et configurés dans notre Active Directory. Il détaille les paramètres, les objectifs et les unités d'organisation (OU) auxquelles chaque GPO est appliquée. Pour toute question ou besoin d'assistance supplémentaire, veuillez contacter l'administrateur AD.
 
 
-[def]: #Privilèges
