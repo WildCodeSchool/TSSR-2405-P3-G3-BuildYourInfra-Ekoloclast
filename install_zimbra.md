@@ -1,7 +1,12 @@
-Voici un guide d'installation de Zimbra pour le domaine ekoloclast.lan, avec le serveur sur l'adresse IP 192.168.0.2 et le serveur DNS ainsi que l'Active Directory (AD) sur l'adresse 192.168.0.4. L'authentification LDAP sera utilisée. Ce document est au format Markdown.
+<div align="center"> 
 
-markdown
-Copier le code
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/charte/ekoloclasttitreok.png)   
+
+</div>
+
+Voici un guide d'installation de Zimbra pour le domaine ekoloclast.lan, avec le serveur sur l'adresse IP 192.168.0.2 et le serveur DNS ainsi que l'Active Directory (AD) sur l'adresse 192.168.0.4. L'authentification LDAP sera utilisée.
+
+
 # Installation de Zimbra pour le domaine ekoloclast.lan
 
 ## Prérequis
