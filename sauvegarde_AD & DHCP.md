@@ -1,3 +1,9 @@
+<div align="center"> 
+
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/charte/ekoloclasttitreok.png)   
+
+</div>
+
 # Sauvegarde de l'Active Directory
 ## 1. Sauvegarde du système  
 
