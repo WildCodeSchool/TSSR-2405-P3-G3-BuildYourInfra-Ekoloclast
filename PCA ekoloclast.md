@@ -4,9 +4,9 @@
 
 </div>
 
-# Plan de Reprise d'Activité (PRA)
+# Plan de Continuité d'Activité (PCA)
 ## 1. Introduction
-Objectif : Restaurer les opérations après une panne ou un désastre.
+Objectif : Assurer la continuité des opérations en cas de panne ou de désastre.
 Portée : Ce plan couvre les serveurs Windows Server 2022 (AD et DHCP), Windows Server 2022 Core (lecteur seul), GLPI, le pare-feu pfSense et le routeur VyOS.
 ## 2. Description de l'Infrastructure
 Serveurs :
@@ -53,34 +53,3 @@ Méthodes de test : Simulations de pannes, tests de basculement, tests de restau
 ## 9. Plan de Communication
 Contacts clés : Liste des contacts clés et leurs rôles.
 Procédures de communication : Procédures pour informer les parties prenantes en cas de panne.
-## 10. Procédures de Récupération
-Étapes de récupération :
-
-### AD et DHCP :
-Restaurer la sauvegarde complète la plus récente.
-Appliquer les sauvegardes incrémentielles.
-Vérifier l'intégrité des données.
-Redémarrer les services AD et DHCP.
-Windows Server 2022 Core :
-Restaurer la sauvegarde complète la plus récente.
-Appliquer les sauvegardes incrémentielles.
-Vérifier l'intégrité des données.
-Redémarrer les services.
-### GLPI :
-Restaurer la sauvegarde complète la plus récente.
-Appliquer les sauvegardes incrémentielles.
-Vérifier l'intégrité des données.
-Redémarrer les services GLPI.
-### pfSense :
-Restaurer la configuration la plus récente.
-Vérifier la configuration.
-Redémarrer les services pfSense.
-### VyOS :
-Restaurer la configuration la plus récente.
-Vérifier la configuration.
-Redémarrer les services VyOS.
-Outils et ressources : Liste des outils et ressources nécessaires pour la récupération.
-
-## 11. Documentation et Formation
-Documentation : Documentation détaillée des procédures de récupération.
-Formation : Plan de formation pour les équipes impliquées dans la récupération.
