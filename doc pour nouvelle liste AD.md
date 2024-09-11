@@ -8,11 +8,11 @@
 Ce script PowerShell est destiné à automatiser la création de dossiers personnels pour les utilisateurs dans un environnement Active Directory. Il prend en charge l'importation de données utilisateurs depuis un fichier CSV et crée les dossiers correspondants dans une structure de répertoires basée sur les unités organisationnelles (OU) définies dans Active Directory.
 
 ## Sommaire
-1.[Vérification et Chargement du Module Active Directory](#1-vérification-et-chargement-du-module-active-directory)
-2.[Importation des Données depuis le Fichier CSV](#2-importation-des-données-depuis-le-fichier-csv)
-3.[Vérification de l'OU Parent dans Active Directory](#3-vérification-de-lou-parent-dans-active-directory)
-4.[Création de Dossiers Basée sur la Structure des OU](#4-création-de-dossiers-basée-sur-la-structure-des-ou)
-5.[Création des Dossiers Personnels des Utilisateurs](#5-création-des-dossiers-personnels-des-utilisateurs)
+1.[Vérification et Chargement du Module Active Directory](#1-vérification-et-chargement-du-module-active-directory)  
+2.[Importation des Données depuis le Fichier CSV](#2-importation-des-données-depuis-le-fichier-csv)  
+3.[Vérification de l'OU Parent dans Active Directory](#3-vérification-de-lou-parent-dans-active-directory)  
+4.[Création de Dossiers Basée sur la Structure des OU](#4-création-de-dossiers-basée-sur-la-structure-des-ou)  
+5.[Création des Dossiers Personnels des Utilisateurs](#5-création-des-dossiers-personnels-des-utilisateurs)  
 ## 1. Vérification et Chargement du Module Active Directory <a name="section1"></a>
 Code :
 
