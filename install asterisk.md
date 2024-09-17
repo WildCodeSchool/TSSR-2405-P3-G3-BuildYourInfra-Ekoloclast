@@ -137,11 +137,16 @@ bindpw VotreMotDePasse
 
 ## 6. Plan de numérotation
 
-- Département 1 : 1000-1039
-- Département 2 : 2000-2039
-- Département 3 : 3000-3039
-- ...
-- Département 10 : 0000-0039
+- Direction : 1000-1039
+- Ressources Humaine : 2000-2039
+- Juridiqu : 3000-3039
+- Marketing : 4000-4039
+- Finance : 5000-5039
+- DSI : 6000-6039
+- Recherche et developpement : 7000-7039
+- Communication : 8000-8039
+- Innovation : 9000-9039
+- Service généraux : 0000-0039
 
 ## 7. Sécurité
 
