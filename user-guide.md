@@ -181,10 +181,14 @@ Pour garantir une organisation claire et permettre une expansion future signific
     - Sous-réseau : 192.168.10.0/24
     - Adresses disponibles : 192.168.10.1 à 192.168.10.254
 
+ 11. **DMZ**
+     - Sous-réseau : 192.168.11.0/24
+     - Adresses disponibles : 192.168.11.1 à 192.168.11.254
+
 ### Configuration IP des matériels réseaux :
 
 - **Routeur**
-  - Adresse IP : 192.168.0.1
+  - Adresse IP : 192.168.11.1
 
 - **Switches**
   - Switch 1 : 192.168.0.2
