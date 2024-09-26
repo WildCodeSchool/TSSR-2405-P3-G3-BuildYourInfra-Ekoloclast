@@ -1,4 +1,11 @@
-## Installation FreePBX
+ <div align="center">
+
+![logo](https://github.com/WildCodeSchool/TSSR-2405-P3-G3-BuildYourInfra-Ekoloclast/blob/s04/ressources/charte/ekoloclasttitreok.png)
+
+</div>
+
+
+# Installation FreePBX
 
 Pour installer le serveur VOIP FreePBX sur une machine virtuelle ,il est necessaire de posseder une image ISO avec la derniere version de FreePBX
 
