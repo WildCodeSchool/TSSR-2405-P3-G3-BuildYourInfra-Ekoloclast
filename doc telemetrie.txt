@@ -1,0 +1,65 @@
+Étapes pour Déployer le Script via GPO
+Créer un Partage Réseau pour le Script :
+
+Créez un dossier sur un serveur accessible par tous les utilisateurs.
+Placez le script PowerShell dans ce dossier.
+Configurez les permissions de partage pour que tous les utilisateurs puissent lire le script.
+Créer une GPO pour Déployer le Script :
+
+Ouvrez la console de gestion des stratégies de groupe (GPMC).
+Créer ou Modifier une GPO Existante :
+
+Créez une nouvelle GPO ou modifiez une GPO existante.
+Nommez la GPO de manière descriptive, par exemple "Déployer Script Télémétrie".
+Configurer la GPO pour Copier le Script sur les Clients :
+
+Allez dans Configuration de l'ordinateur > Préférences > Paramètres Windows > Fichiers.
+Cliquez avec le bouton droit sur Fichiers et sélectionnez Nouveau > Fichier.
+Configurez comme suit :
+Action : Remplacer
+Chemin source : \\NomServeur\Partage\script.ps1 (remplacez \\NomServeur\Partage par le chemin réseau réel)
+Chemin de destination : C:\Scripts\script.ps1 (ou un autre chemin local de votre choix)
+Configurer la GPO pour Exécuter le Script au Démarrage :
+
+Allez dans Configuration de l'ordinateur > Paramètres Windows > Scripts (Démarrage/Arrêt).
+Sélectionnez Démarrage et cliquez sur Ajouter.
+Cliquez sur Parcourir et sélectionnez le script PowerShell copié sur le chemin local (C:\Scripts\script.ps1).
+Appliquer la GPO à l'Unité d'Organisation (OU) ou au Domaine :
+
+Dans la console GPMC, cliquez avec le bouton droit sur l'OU ou le domaine où vous souhaitez appliquer la GPO.
+Sélectionnez Lier un objet de stratégie de groupe existant et choisissez la GPO que vous avez créée.
+Étapes Détaillées
+Créer le Partage Réseau :
+
+Sur le serveur, créez un dossier (par exemple, Scripts).
+Placez le script script.ps1 dans ce dossier.
+Cliquez avec le bouton droit sur le dossier, sélectionnez Propriétés, puis allez à l'onglet Partage.
+Cliquez sur Partager et ajoutez les utilisateurs ou groupes qui ont besoin d'accéder au script avec les permissions de lecture.
+Créer la GPO :
+
+Ouvrez GPMC (Gestion des stratégies de groupe).
+Cliquez avec le bouton droit sur le domaine ou l'OU approprié et sélectionnez Créer un objet GPO dans ce domaine, et le lier ici.
+Donnez un nom à la GPO (par exemple, Déployer Script Télémétrie).
+Configurer la GPO pour Copier le Script :
+
+Dans GPMC, éditez la GPO que vous avez créée.
+Allez dans Configuration de l'ordinateur > Préférences > Paramètres Windows > Fichiers.
+Faites un clic droit sur Fichiers, puis Nouveau > Fichier.
+Configurez l'action, le chemin source et le chemin de destination comme décrit précédemment.
+Configurer la GPO pour Exécuter le Script :
+
+Dans la même GPO, allez dans Configuration de l'ordinateur > Paramètres Windows > Scripts (Démarrage/Arrêt).
+Sélectionnez Démarrage, puis cliquez sur Ajouter.
+Parcourez jusqu'au script copié localement (C:\Scripts\script.ps1) et sélectionnez-le.
+Appliquer la GPO :
+
+Dans GPMC, cliquez avec le bouton droit sur l'OU ou le domaine où vous souhaitez appliquer la GPO.
+Sélectionnez Lier un objet de stratégie de groupe existant et choisissez la GPO que vous avez créée.
+Vérification
+Forcer la Mise à Jour des Politiques :
+
+Sur un poste client, ouvrez une fenêtre de commande et exécutez gpupdate /force pour appliquer immédiatement les nouvelles stratégies de groupe.
+Vérifier l'Application du Script :
+
+Redémarrez le poste client pour que le script s'exécute au démarrage.
+Vérifiez que les paramètres de télémétrie sont correctement configurés (niveau 0 - Sécurité).
