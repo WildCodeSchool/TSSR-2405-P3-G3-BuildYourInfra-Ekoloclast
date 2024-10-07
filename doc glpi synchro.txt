@@ -1,0 +1,73 @@
+La synchronisation de GLPI (Gestionnaire Libre de Parc Informatique) avec Active Directory Domain Services (AD DS) permet de centraliser la gestion des utilisateurs en utilisant les informations d'identification et les groupes de l'AD pour accéder à GLPI. Voici un guide pour configurer cette synchronisation :
+
+### Prérequis
+
+- GLPI installé et configuré.
+- Serveur AD DS opérationnel.
+- Accès administrateur sur GLPI et AD DS.
+- Module LDAP activé dans PHP sur le serveur où GLPI est installé.
+
+### Étapes de configuration
+
+#### 1. Configurer le plugin LDAP dans GLPI
+
+1. **Se connecter à GLPI en tant qu'administrateur**
+   - Ouvrez votre navigateur web et connectez-vous à GLPI avec un compte ayant des privilèges administratifs.
+
+2. **Accéder à la configuration des authentifications externes**
+   - Allez dans le menu "Configuration" > "Authentification" > "LDAP directories".
+
+3. **Ajouter un serveur LDAP**
+   - Cliquez sur "Ajouter un serveur".
+
+#### 2. Paramétrer le serveur LDAP
+
+1. **Informations générales**
+   - **Nom** : Donnez un nom descriptif pour votre serveur LDAP (par exemple, "AD DS").
+   - **Serveur LDAP** : Entrez l'adresse IP ou le nom de domaine complet (FQDN) de votre serveur AD DS.
+   - **Port** : 389 (par défaut pour LDAP non sécurisé) ou 636 (pour LDAP sécurisé).
+
+2. **Connexion**
+   - **BaseDN** : Le DN de base pour les recherches LDAP (par exemple, `dc=wilders,dc=lan`).
+   - **Connexion** : 
+     - **DN de connexion** : Le DN complet d'un utilisateur avec les permissions nécessaires pour interroger l'AD (par exemple, `cn=admin,dc=wilders,dc=lan`).
+     - **Mot de passe de connexion** : Le mot de passe de cet utilisateur.
+
+3. **Filtrage**
+   - **Filtre de connexion** : Filtre LDAP pour trouver les utilisateurs (par exemple, `(&(objectClass=user)(sAMAccountName=%s))`).
+   - **Filtre des utilisateurs** : Filtre LDAP pour lister les utilisateurs (par exemple, `(objectClass=user)`).
+   - **Filtre des groupes** : Filtre LDAP pour lister les groupes (par exemple, `(objectClass=group)`).
+
+4. **Configuration des attributs**
+   - **Attribut d'identifiant unique** : `objectGUID`
+   - **Attribut de nom complet** : `cn`
+   - **Attribut de login** : `sAMAccountName`
+   - **Attribut de l'email** : `mail`
+
+5. **Test de connexion**
+   - Cliquez sur "Tester" pour vérifier que GLPI peut se connecter à l'AD avec les informations fournies.
+
+6. **Enregistrer**
+   - Si le test est réussi, cliquez sur "Ajouter" pour enregistrer le serveur LDAP.
+
+#### 3. Synchroniser les utilisateurs et les groupes
+
+1. **Importer les utilisateurs**
+   - Allez dans "Administration" > "Utilisateurs".
+   - Cliquez sur "LDAP directories" pour voir la liste des utilisateurs disponibles.
+   - Sélectionnez les utilisateurs que vous souhaitez importer et cliquez sur "Importer".
+
+2. **Configurer la synchronisation automatique (optionnelle)**
+   - Vous pouvez configurer une tâche cron pour synchroniser les utilisateurs à intervalle régulier :
+     - Créez un script pour exécuter la commande de synchronisation des utilisateurs (par exemple, `glpi:ldap:sync_users`).
+     - Ajoutez ce script dans la crontab pour une exécution périodique.
+
+#### 4. Configuration de la connexion unique (SSO) (optionnel)
+
+1. **Configurer le SSO dans GLPI**
+   - Installez le plugin "cas" pour GLPI.
+   - Configurez le serveur CAS avec les informations de votre serveur AD DS.
+
+### Conclusion
+
+Vous avez maintenant configuré GLPI pour synchroniser les utilisateurs et groupes avec votre AD DS. Les utilisateurs peuvent se connecter à GLPI avec leurs identifiants AD, et les administrateurs peuvent gérer les permissions et les groupes à partir d'une source centralisée. Cette configuration simplifie la gestion des utilisateurs et améliore la sécurité grâce à l'authentification centralisée.
