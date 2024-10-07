@@ -1,0 +1,85 @@
+### Mise en place d'une supervision de l'infrastructure réseau avec PRTG
+
+Voici un guide détaillé pour l'installation de PRTG sur une machine virtuelle dédiée, la supervision des éléments de l'infrastructure et la création de tableaux de bord.
+
+#### 1. Installation de PRTG sur une VM dédiée
+
+**Pré-requis :**
+- Une machine virtuelle avec un système d'exploitation Windows Server (Windows Server 2016, 2019 ou 2022 recommandé).
+- Accès à Internet pour télécharger les fichiers d'installation et les mises à jour.
+
+**Étapes d'installation :**
+
+1. **Création de la VM :**
+   - **VMware/Hyper-V/VirtualBox** : Utilisez votre hyperviseur préféré pour créer une nouvelle VM.
+   - **Spécifications recommandées** : Au moins 2 vCPU, 4 GB de RAM, 40 GB de stockage.
+   - **Système d'exploitation** : Installez Windows Server sur cette VM.
+
+2. **Téléchargement de PRTG :**
+   - Rendez-vous sur le site officiel de Paessler : [Télécharger PRTG](https://www.paessler.com/download/prtg-download).
+   - Téléchargez le fichier d'installation approprié.
+
+3. **Installation de PRTG :**
+   - Copiez le fichier d'installation sur la VM et exécutez-le.
+   - Suivez les instructions de l'assistant d'installation :
+     - Acceptez les termes du contrat de licence.
+     - Sélectionnez une installation typique.
+     - Définissez le mot de passe administrateur.
+   - Une fois l'installation terminée, PRTG se lance automatiquement et vous demande de configurer les paramètres initiaux.
+
+#### 2. Supervision des éléments de l'infrastructure
+
+**Ajout des dispositifs à surveiller :**
+
+1. **Accéder à l'interface Web de PRTG :**
+   - Ouvrez un navigateur web et accédez à l'interface de PRTG via l'URL `http://<IP_de_votre_VM>:8080`.
+   - Connectez-vous avec le mot de passe administrateur configuré précédemment.
+
+2. **Ajouter des dispositifs :**
+   - Dans le panneau de configuration, allez dans "Devices" et cliquez sur "Add Device".
+   - Remplissez les informations nécessaires :
+     - **Nom du dispositif** : Choisissez un nom descriptif.
+     - **Adresse IP/DNS** : Entrez l'adresse IP ou le nom DNS du dispositif.
+     - **Groupe** : Sélectionnez un groupe existant ou créez-en un nouveau pour organiser vos dispositifs.
+   - Cliquez sur "Add Device" pour ajouter le dispositif.
+
+3. **Configurer les capteurs :**
+   - Après l'ajout d'un dispositif, vous pouvez ajouter des capteurs pour surveiller des aspects spécifiques.
+   - Cliquez sur le dispositif, puis sur "Add Sensor".
+   - Choisissez parmi les capteurs disponibles (SNMP, WMI, Ping, HTTP, etc.).
+   - Configurez chaque capteur selon vos besoins (intervalles de scan, seuils d'alerte, etc.).
+
+4. **Supervision des dispositifs futurs :**
+   - Répétez les étapes ci-dessus pour chaque nouveau dispositif.
+   - Vous pouvez automatiser l'ajout de dispositifs via les APIs de PRTG ou des scripts PowerShell.
+
+#### 3. Mise en place de tableaux de bord
+
+**Créer des tableaux de bord personnalisés :**
+
+1. **Accéder à l'interface de gestion des tableaux de bord :**
+   - Dans l'interface de PRTG, allez dans "Dashboard".
+
+2. **Créer un nouveau tableau de bord :**
+   - Cliquez sur "Add Dashboard".
+   - Donnez un nom à votre tableau de bord, par exemple "Supervision Réseau".
+
+3. **Ajouter des widgets :**
+   - Cliquez sur "Add Widget" pour ajouter des éléments graphiques :
+     - **Graphiques** : Afficher les données des capteurs sous forme de graphiques.
+     - **Listes de dispositifs** : Afficher les statuts des dispositifs surveillés.
+     - **Cartes** : Représentation visuelle des dispositifs sur une carte.
+   - Sélectionnez les capteurs ou dispositifs à afficher pour chaque widget.
+
+4. **Personnalisation et agencement :**
+   - Ajustez la disposition des widgets par glisser-déposer pour optimiser la vue.
+   - Configurez les options de filtrage pour afficher uniquement les informations pertinentes.
+   - Utilisez des couleurs et des icônes pour une meilleure lisibilité.
+
+5. **Partage et accès :**
+   - Cliquez sur les paramètres de chaque tableau de bord pour définir les permissions d'accès.
+   - Partagez le tableau de bord avec d'autres utilisateurs en leur attribuant des rôles (lecture seule, éditeur, etc.).
+
+### Conclusion
+
+En suivant ces étapes détaillées, vous pouvez installer PRTG sur une machine virtuelle dédiée, configurer la supervision des éléments de votre infrastructure réseau, et créer des tableaux de bord personnalisés pour une visualisation optimale. PRTG offre une grande flexibilité et une puissante capacité de surveillance, ce qui en fait un outil indispensable pour la gestion et la maintenance de votre réseau.
